@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
 
-// APNA FIREBASE CONFIG YAHAN REPLACE KARNA
 const firebaseConfig = {
   apiKey: "AIzaSyAm3H9dyV7YGniAelRxKZ5V5LJFihUU4fQ",
   authDomain: "azuba-finance.firebaseapp.com",
@@ -11,9 +11,7 @@ const firebaseConfig = {
   appId: "1:236798361841:web:131bab8743df6e103b6950"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-
-// Initialize Authentication
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
+export const db = getFirestore(app); // Yeh zaroori hai
