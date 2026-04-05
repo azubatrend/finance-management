@@ -1,0 +1,52 @@
+:root {
+  --bg-light: #ffffff;
+  --bg-card: #f8f9fa;
+  --bg-body: #e5e7eb;
+  --text-black: #1a1a1a;
+  --color-green: #22c55e;
+  --color-red: #ef4444;
+  --color-blue: #3b82f6;
+  --color-gray: #6b7280;
+}
+
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+}
+
+/* React ke root div ko full screen karna zaroori hai */
+html, body, #root {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-body);
+}
+
+#root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 📱 MOBILE FIRST: Default full width & full height (No gaps) */
+.app-container {
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-light);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Extra scroll hide karne ke liye */
+}
+
+/* 💻 DESKTOP VIEW: Center mein phone jaisa frame banega */
+@media (min-width: 480px) {
+  .app-container {
+    max-width: 420px;
+    height: 90vh; /* Screen ka 90% height lega */
+    max-height: 850px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  }
+}
